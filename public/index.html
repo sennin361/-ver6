@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>仙人チャット</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="login-area">
+    <h2>仙人チャットへようこそ</h2>
+    <input id="username" placeholder="ユーザー名を入力" autocomplete="off" />
+    <input id="room" placeholder="あいことばを入力" autocomplete="off" />
+    <button id="join-btn">入室</button>
+    <button id="admin-btn">管理画面へ</button>
+  </div>
+
+  <div id="admin-login" style="display:none;">
+    <input id="admin-password" type="password" placeholder="管理者パスワードを入力" autocomplete="off" />
+    <button id="admin-login-btn">ログイン</button>
+    <button id="admin-login-cancel">キャンセル</button>
+  </div>
+
+  <div id="admin-area" style="display:none;">
+    <h2>管理画面</h2>
+    <label>部屋（あいことば）選択:
+      <input id="admin-room" placeholder="部屋名を入力" autocomplete="off" />
+    </label>
+    <button id="admin-fetch-history">履歴取得</button>
+    <div id="admin-history" style="white-space:pre-wrap; max-height:300px; overflow-y:auto; background:#fafafa; padding:10px; border:1px solid #ddd;"></div>
+
+    <input id="admin-ban-username" placeholder="垢バンするユーザー名" autocomplete="off" />
+    <button id="admin-ban-btn">垢バン</button>
+
+    <input id="admin-broadcast-message" placeholder="一斉送信メッセージ" autocomplete="off" />
+    <button id="admin-broadcast-btn">一斉送信</button>
+
+    <button id="admin-reset-btn" style="background:#c0392b; color:white; width:100%;">サーバーリセット</button>
+
+    <button id="admin-logout-btn" style="background:#7f8c8d; color:white; width:100%;">ログアウト</button>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
